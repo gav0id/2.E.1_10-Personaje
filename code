@@ -1,1 +1,46 @@
+public class Personaje {
+    private String nombre;
+    private int puntosVida;
+    private int puntosAtaque;
 
+    public Personaje(String nombre, int puntosVida, int puntosAtaque) {
+        this.nombre = nombre;
+        this.puntosVida = puntosVida;
+        this.puntosAtaque = puntosAtaque;
+    }
+
+    public void atacar(Personaje objetivo) {
+        objetivo.puntosVida = objetivo.puntosVida - this.puntosAtaque;
+        System.out.println(this.nombre + " ha atacado a " + objetivo.nombre);
+        System.out.println("Le quedan " + objetivo.puntosVida + " puntos de vida a " + objetivo.nombre);
+    }
+
+    public boolean estaVivo() {
+        if (puntosVida > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+MAIN
+public class Main {
+    public static void main(String[] args) {
+    Personaje p1 = new Personaje("Jorge Selva", 167, 30);
+    Personaje p2 = new Personaje("Nicolas Rincon", 333, 15);
+
+        System.out.println("Comienza la batalla");
+
+        while (p1.estaVivo() && p2.estaVivo()) {
+            p1.atacar(p2);
+
+            if (p2.estaVivo()) {
+                p2.atacar(p1);
+            }
+        }
+
+        System.out.println("Fin de la batalla");
+        System.out.println("Ha ganado" + );
+    }
+}
