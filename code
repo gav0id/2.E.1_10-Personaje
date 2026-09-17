@@ -22,13 +22,16 @@ public class Personaje {
             return false;
         }
     }
+
+    public String obtenerNombre() {
+        return nombre;
+    }
 }
 
-MAIN
 public class Main {
     public static void main(String[] args) {
-    Personaje p1 = new Personaje("Jorge Selva", 167, 30);
-    Personaje p2 = new Personaje("Nicolas Rincon", 333, 15);
+        Personaje p1 = new Personaje("Jorge Selva", 167, 30);
+        Personaje p2 = new Personaje("Nicolas Rincon", 333, 15);
 
         System.out.println("Comienza la batalla");
 
@@ -41,6 +44,11 @@ public class Main {
         }
 
         System.out.println("Fin de la batalla");
-        System.out.println("Ha ganado" + );
+
+        if (p1.estaVivo()) {                            
+            System.out.println("Ha ganado " + p1.obtenerNombre());
+        } else {
+            System.out.println("Ha ganado " + p2.obtenerNombre());
+        }
     }
 }
