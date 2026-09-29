@@ -28,6 +28,8 @@ public class Personaje {
     }
 }
 
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 public class Main {
     public static void main(String[] args) {
         Personaje p1 = new Personaje("Jorge Selva", 167, 30);
